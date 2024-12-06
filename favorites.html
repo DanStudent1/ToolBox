@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранные товары</title>
+    <link rel="stylesheet" href="header-1.css">
+    <link rel="stylesheet" href="images-settings.css">
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="products.css">
+</head>
+ <!-- Иконка чата -->
+ <div id="chat-icon" onclick="toggleChat()"> 
+    <img src="images\chat_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="chat" class="chat">
+    <i class="fa fa-comments"></i>
+</div>
+
+<!-- Окно чата -->
+<div id="chat-window">
+    <div id="chat-header">
+        <span>Чат</span>
+    </div>
+    <div id="chat-body">
+        <!-- Сообщения чата -->
+    </div>
+    <div id="chat-footer">
+        <input type="text" placeholder="Введите сообщение..." />
+        <button>Отправить</button>
+    </div>
+</div>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images\free-icon-tools-7307974.png" alt="logo" class="shopLogo">
+            <h1 class="shopTitle">Toolbox</h1>
+        </div>
+        <nav class="headnav">
+            <ul class="main">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li><span id="login-button"  class="header-button" style="cursor: pointer; color: black;">Войти</span></li>
+                <li><a href="favorites.html">Избранное</a></li>
+                <li><div id="cart-icon" class="header-icon" onclick="toggleCart()">
+                    <img src="images\cart.png" alt="cart" class="cart2">
+                </div></li>
+            </ul>
+        </nav>
+        <!-- Меню бургер и корзина -->
+        <input type="checkbox" id="menu-toggle" class="checkbox">
+        <label for="menu-toggle" class="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <div id="cart-icon2" class="header-icon" onclick="toggleCart()">
+            <img src="images\cart.png" alt="cart" class="cart2">
+        </div>
+        <nav class="fullscreen-menu">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
+            <a href="#contact">Контакты</a>
+            <a href="favorites.html">Избранное</a>
+            <a id="login-button-mobile">Войти</a>
+        </nav>
+    </header>
+    <div class="cart" id="cart-window">
+        <h3>Корзина</h3>
+        <div id="cart-items"></div> <!-- Контейнер для товаров -->
+        <p>Общая стоимость: <span id="cart-total">0</span> руб.</p>
+        <button id="checkout">Оформить заказ</button>
+    </div>
+    
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <form class="login-form">
+                <h2>Вход в аккаунт</h2>
+                <div class="form-group">
+                    <label for="username">Имя пользователя:</label>
+                    <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+                </div>
+                <button type="submit" class="login-submit">Войти</button>
+                <a href="#" class="forgot-password">Забыли пароль?</a>
+            </form>
+        </div>
+    </div>
+    <main>
+        <section class="favorites-section">
+            <h2>Избранные товары</h2>
+            <div id="favorites-container" class="favorites-grid"></div>
+        </section>
+    </main>
+    <footer>
+        <p>Контактные данные:</p>
+        <a href="tel:01234567890">Телефон</a>
+        <a href="mailto:sendemail@gmail.com">Электронная почта</a>
+        <div class="social-buttons">
+            <a href="#" class="social-button"><span>VK</span></a>
+            <a href="#" class="social-button"><span>Telegram</span></a>
+            <a href="#" class="social-button"><span>Instagram</span></a>
+        </div>
+    </footer>
+    <script src="favorites.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

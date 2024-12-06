@@ -1,0 +1,386 @@
+<!--Выполнил Новиков Д. ИКБО-21-23-->
+<!DOCTYPE html>
+<html lang="ru">
+<div class="container">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <title>ToolBox</title>
+        <link rel="stylesheet" href="header-1.css">
+        <link rel="stylesheet" href="images-settings.css">
+        <link rel="stylesheet" href="cards.css">
+        <link rel="stylesheet" href="products.css">
+    </head>
+
+    <!-- Иконка чата -->
+    <div id="chat-icon" onclick="toggleChat()"> 
+        <img src="images\chat_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="chat" class="chat">
+        <i class="fa fa-comments"></i>
+    </div>
+
+    <!-- Окно чата -->
+    <div id="chat-window">
+        <div id="chat-header">
+            <span>Чат</span>
+        </div>
+        <div id="chat-body">
+            <!-- Сообщения чата -->
+        </div>
+        <div id="chat-footer">
+            <input type="text" placeholder="Введите сообщение..." />
+            <button>Отправить</button>
+        </div>
+    </div>
+
+    <body>
+        
+        <header>
+            <div class="logo-container">
+                <img src="images\free-icon-tools-7307974.png" alt="logo" class="shopLogo">
+                <h1 class="shopTitle">Toolbox</h1>
+            </div>
+            <nav class="headnav">
+                <ul class="main">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                    <li><span id="login-button"  class="header-button" style="cursor: pointer; color: black;">Войти</span></li>
+                    <li><a href="favorites.html">Избранное</a></li>
+                    <li><div id="cart-icon" class="header-icon" onclick="toggleCart()">
+                        <img src="images\cart.png" alt="cart" class="cart2">
+                    </div></li>
+                </ul>
+            </nav>
+            <!-- Меню бургер и корзина -->
+            <input type="checkbox" id="menu-toggle" class="checkbox">
+            <label for="menu-toggle" class="menu-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+            <div id="cart-icon2" class="header-icon" onclick="toggleCart()">
+                <img src="images\cart.png" alt="cart" class="cart2">
+            </div>
+            <nav class="fullscreen-menu">
+                <a href="index.html">Главная</a>
+                <a href="about.html">О нас</a>
+                <a href="#contact">Контакты</a>
+                <a href="favorites.html">Избранное</a>
+                <a id="login-button-mobile">Войти</a>
+            </nav>
+        </header>
+
+        <div class="cart" id="cart-window">
+            <h3>Корзина</h3>
+            <div id="cart-items"></div> <!-- Контейнер для товаров -->
+            <p>Общая стоимость: <span id="cart-total">0</span> руб.</p>
+            <button id="checkout">Оформить заказ</button>
+        </div>
+        
+
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <form class="login-form">
+                    <h2>Вход в аккаунт</h2>
+                    <div class="form-group">
+                        <label for="username">Имя пользователя:</label>
+                        <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль:</label>
+                        <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+                    </div>
+                    <button type="submit" class="login-submit">Войти</button>
+                    <a href="#" class="forgot-password">Забыли пароль?</a>
+                </form>
+            </div>
+        </div>
+
+        <main>
+        <section class="image-grid">
+            <button class="arrow left" onclick="scrollLeft1()">&#10094;</button>
+            <div class="grid-item " onclick="location.href='rental.html'">
+                <img src="images\аренда.png" alt="Изображение 1">
+                <div class="caption">Аренда Инструмента</div>
+            </div>
+            <div class="grid-item">
+                <img src="images\49ee6dcc57b2e0f533c6c48580fe3110.png" alt="Изображение 2">
+                <div class="caption">Возврат</div>
+            </div>
+            <div class="grid-item">
+                <img src="images\invest.png" alt="Изображение 3">
+                <div class="caption">Инвесторам</div>
+            </div>
+            <div class="grid-item">
+                <img src="images\pack.png" alt="Изображение 4">
+                <div class="caption">доставка</div>
+            </div>
+            <button class="arrow right" onclick="scrollRight1()">&#10095;</button>
+        </section>
+
+        <h2 id="home">Что вам нужно?</h2>
+        <section class="scrollable-cards-container">
+            <button class="arrow left" onclick="scrollLeft()">&#10094;</button>
+            <div class="scrollable-cards">
+                <div class="card" onclick="location.href='#topic1'">
+                    <img src="images\free-icon-machine-drill-3461829.png" alt="Инструменты">
+                    <h3>Инструменты</h3>
+                </div>
+                <div class="card" onclick="location.href='#topic2'">
+                    <img src="images\free-icon-tools-1077147.png" alt="Ручные инструменты">
+                    <h3>Ручные инструменты</h3>
+                </div>
+                <div class="card" onclick="location.href='#topic3'">
+                    <img src="images\free-icon-lathe-1799865.png" alt="Строительное оборудование">
+                    <h3>Строительное оборудование</h3>
+                </div>
+                <div class="card" onclick="location.href='#topic4'">
+                    <img src="images\free-icon-brick-1200825.png" alt="Стройматериалы">
+                    <h3>Стройматериалы</h3>
+                </div>
+                <div class="card" onclick="location.href='#topic5'">
+                    <img src="images\free-icon-bolt-3189260.png" alt="Фурнитура и крепежи">
+                    <h3>Фурнитура и крепежи</h3>
+                </div>
+                <div class="card" onclick="location.href='#topic6'">
+                    <img src="images\free-icon-electric-meter-3251076.png" alt="Электрика">
+                    <h3>Электрика</h3>
+                </div>
+                <div class="card" onclick="location.href='#topic7'">
+                    <img src="images\free-icon-faucet-2373548.png" alt="Сантехника">
+                    <h3>Сантехника</h3>
+                </div>
+            </div>
+            <button class="arrow right" onclick="scrollRight()">&#10095;</button>
+        </section>
+        
+        <section>
+        <div class="content-block instruments">
+        <h2 id="topic1">Инструменты</h2>
+        <section class="products">
+            <div class="product-list">
+                <div class="product-card" onclick="openProductPage(1)">
+                    <span class="heart-icon" onclick="toggleFavorite(1); event.stopPropagation()">&#10084;</span>
+                    <img src="images\perforator.png" alt="Товар 1" class="product-image">
+                    <h3 class="product-title" >Электрический перфоратор с ударной функцией</h3>
+                    <p class="product-price">Цена: 10 000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="10000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>                
+                <div class="product-card" onclick="openProductPage(2)">
+                    <span class="heart-icon" onclick="toggleFavorite(2); event.stopPropagation()">&#10084;</span>
+                    <img src="images\bolgar1.jpg" alt="Товар 2" class="product-image">
+                    <h3 class="product-title">Угловая шлифмашина AEG WS13-125SXE 4935451309</h3>
+                    <p class="product-price">Цена: 13 430 руб.</p>
+                    <button class="add-to-cart-btn" data-price="13430" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+                <div class="product-card" onclick="openProductPage(3)">
+                    <span class="heart-icon" onclick="toggleFavorite(3); event.stopPropagation()">&#10084;</span>
+                    <img src="images\gayka1.jpg" alt="Товар 3" class="product-image">
+                    <h3 class="product-title">Аккумуляторный гайковерт AEG BSS 18C12ZLi-0 4935446449</h3>
+                    <p class="product-price">Цена: 9 300 руб.</p>
+                    <button class="add-to-cart-btn" data-price="9300" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+            </div>
+        </section>
+    
+        </div>
+
+        <div class="content-block hand-instruments">
+        <h2 id="topic2">Ручные инструменты</h2>
+        <section class="products">
+            <div class="product-list">
+                <div class="product-card" onclick="openProductPage(4)">
+                    <span class="heart-icon" onclick="toggleFavorite(4); event.stopPropagation()">&#10084;</span>
+                    <img src="C:\Users\User\.vscode\pr" alt="Товар 4" class="product-image">
+                    <h3 class="product-title" >товар 4</h3>
+                    <p class="product-price">Цена: 1000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="1000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>                
+                <div class="product-card" onclick="openProductPage(5)">
+                    <span class="heart-icon" onclick="toggleFavorite(5); event.stopPropagation()">&#10084;</span>
+                    <img src="path/to/image2.jpg" alt="Товар 2" class="product-image">
+                    <h3 class="product-title">Товар 5</h3>
+                    <p class="product-price">Цена: 1500 руб.</p>
+                    <button class="add-to-cart-btn" data-price="1500" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+                <div class="product-card" onclick="openProductPage(6)">
+                    <span class="heart-icon" onclick="toggleFavorite(6); event.stopPropagation()">&#10084;</span>
+                    <img src="path/to/image3.jpg" alt="Товар 3" class="product-image">
+                    <h3 class="product-title">Товар 6</h3>
+                    <p class="product-price">Цена: 2000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="2000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <div class="content-block stanki">
+        <h2 id="topic3">Станки и строительное оборудование</h2>
+        <section class="products">
+            <div class="product-list">
+                <div class="product-card" onclick="openProductPage(7)">
+                    <span class="heart-icon" onclick="toggleFavorite(7); event.stopPropagation()">&#10084;</span>
+                    <img src="C:\Users\User\.vscode\pr" alt="Товар 7" class="product-image">
+                    <h3 class="product-title" >товар 7</h3>
+                    <p class="product-price">Цена: 1000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="1000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>                
+                <div class="product-card" onclick="openProductPage(8)">
+                    <span class="heart-icon" onclick="toggleFavorite(8); event.stopPropagation()">&#10084;</span>
+                    <img src="path/to/image2.jpg" alt="Товар 8" class="product-image">
+                    <h3 class="product-title">Товар 8</h3>
+                    <p class="product-price">Цена: 1500 руб.</p>
+                    <button class="add-to-cart-btn" data-price="1500" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+                <div class="product-card" onclick="openProductPage(9)">
+                    <span class="heart-icon" onclick="toggleFavorite(9); event.stopPropagation()">&#10084;</span>
+                    <img src="path/to/image3.jpg" alt="Товар 9" class="product-image">
+                    <h3 class="product-title">Товар 9</h3>
+                    <p class="product-price">Цена: 2000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="2000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <div class="content-block build-materials">
+        <h2 id="topic4">Стройматериалы</h2>
+        <section class="products">
+            <div class="product-list">
+                <div class="product-card" onclick="openProductPage(10)">
+                    <span class="heart-icon" onclick="toggleFavorite(10); event.stopPropagation()">&#10084;</span>
+                    <img src="C:\Users\User\.vscode\pr" alt="Товар 11" class="product-image">
+                    <h3 class="product-title" >товар 10/h3>
+                    <p class="product-price">Цена: 1000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="1000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>                
+                <div class="product-card" onclick="openProductPage(11)">
+                    <span class="heart-icon" onclick="toggleFavorite(11); event.stopPropagation()">&#10084;</span>
+                    <img src="path/to/image2.jpg" alt="Товар 11" class="product-image">
+                    <h3 class="product-title">Товар 11</h3>
+                    <p class="product-price">Цена: 1500 руб.</p>
+                    <button class="add-to-cart-btn" data-price="1500" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+                <div class="product-card" onclick="openProductPage(12)">
+                    <span class="heart-icon" onclick="toggleFavorite(12); event.stopPropagation()">&#10084;</span>
+                    <img src="path/to/image3.jpg" alt="Товар 3" class="product-image">
+                    <h3 class="product-title">Товар 12</h3>
+                    <p class="product-price">Цена: 2000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="2000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <div class="content-block furniture">
+        <h2 id="topic5">Фурнитура и крепежи</h2>
+        <section class="products">
+            <div class="product-list">
+                <div class="product-card" onclick="openProductPage(13)">
+                    <span class="heart-icon" onclick="toggleFavorite(13); event.stopPropagation()">&#10084;</span>
+                    <img src="C:\Users\User\.vscode\pr" alt="Товар 13" class="product-image">
+                    <h3 class="product-title" >товар 13</h3>
+                    <p class="product-price">Цена: 1000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="1000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>                
+                <div class="product-card" onclick="openProductPage(14)">
+                    <span class="heart-icon" onclick="toggleFavorite(14); event.stopPropagation()">&#10084;</span>
+                    <img src="path/to/image2.jpg" alt="Товар 14" class="product-image">
+                    <h3 class="product-title">Товар 14</h3>
+                    <p class="product-price">Цена: 1500 руб.</p>
+                    <button class="add-to-cart-btn" data-price="1500" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+                <div class="product-card" onclick="openProductPage(15)">
+                    <span class="heart-icon" onclick="toggleFavorite(15); event.stopPropagation()">&#10084;</span>
+                    <img src="path/to/image3.jpg" alt="Товар 15" class="product-image">
+                    <h3 class="product-title">Товар 15</h3>
+                    <p class="product-price">Цена: 2000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="2000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <div class="content-block electrics">
+        <h2 id="topic6">Электрика</h2>
+        <section class="products">
+            <div class="product-list">
+                <div class="product-card" onclick="openProductPage(16)">
+                    <span class="heart-icon" onclick="toggleFavorite(16); event.stopPropagation()">&#10084;</span>
+                    <img src="C:\Users\User\.vscode\pr" alt="Товар 16" class="product-image">
+                    <h3 class="product-title" >товар 16</h3>
+                    <p class="product-price">Цена: 1000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="1000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>                
+                <div class="product-card" onclick="openProductPage(17)">
+                    <span class="heart-icon" onclick="toggleFavorite(17); event.stopPropagation()">&#10084;</span>
+                    <img src="path/to/image2.jpg" alt="Товар 17" class="product-image">
+                    <h3 class="product-title">Товар 17</h3>
+                    <p class="product-price">Цена: 1500 руб.</p>
+                    <button class="add-to-cart-btn" data-price="1500" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+                <div class="product-card" onclick="openProductPage(18)">
+                    <span class="heart-icon" onclick="toggleFavorite(18); event.stopPropagation()">&#10084;</span>
+                    <img src="path/to/image3.jpg" alt="Товар 18" class="product-image">
+                    <h3 class="product-title">Товар 18</h3>
+                    <p class="product-price">Цена: 2000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="2000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <div class="content-block plumb">
+        <h2 id="topic7">Сантехника</h2>
+        <section class="products">
+            <div class="product-list">
+                <div class="product-card" onclick="openProductPage(19)">
+                    <span class="heart-icon" onclick="toggleFavorite(19); event.stopPropagation()">&#10084;</span>
+                    <img src="C:\Users\User\.vscode\pr" alt="Товар 19" class="product-image">
+                    <h3 class="product-title" >товар 19</h3>
+                    <p class="product-price">Цена: 1000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="1000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>                
+                <div class="product-card" onclick="openProductPage(20)">
+                    <span class="heart-icon" onclick="toggleFavorite(20); event.stopPropagation()">&#10084;</span>
+                    <img src="path/to/image2.jpg" alt="Товар 20" class="product-image">
+                    <h3 class="product-title">Товар 20</h3>
+                    <p class="product-price">Цена: 1500 руб.</p>
+                    <button class="add-to-cart-btn" data-price="1500" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+                <div class="product-card" onclick="openProductPage(21)">
+                    <span class="heart-icon" onclick="toggleFavorite(21); event.stopPropagation()">&#10084;</span>
+                    <img src="path/to/image3.jpg" alt="Товар 21" class="product-image">
+                    <h3 class="product-title">Товар 21</h3>
+                    <p class="product-price">Цена: 2000 руб.</p>
+                    <button class="add-to-cart-btn" data-price="2000" onclick="event.stopPropagation(); ">В корзину</button>
+                </div>
+            </div>
+        </section>   
+        </div>
+
+        </section>
+    </main>
+        <aside>
+            <h2>Мы на карте</h2>
+            <iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=55.91566766946995, 37.74492232241808&amp;q=Новомытищинский пр., 12. 1, Мытищи, Московская обл., 141002&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br />
+        </aside>
+
+        <footer>
+        <p id="contact">Контактные данные:</p>
+        <a href="tel:01234567890">Телефон</a>
+        <a href="mailto:sendemail@gmail.com">Электронная почта</a>
+        <div class="social-buttons">
+            <a href="#" class="social-button"><span>VK</span></a>
+            <a href="#" class="social-button"><span>Telegram</span></a>
+            <a href="#" class="social-button"><span>Instagram</span></a>
+        </div>
+        </footer>
+            <!-- Подключение JavaScript -->
+        <script src="scripts.js"></script>
+        <script src="scriptsforproduct.js"></script>
+    </body>
+</div>
+</html>
